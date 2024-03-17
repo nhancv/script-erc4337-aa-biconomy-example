@@ -63,6 +63,7 @@ const aaSendContract = async (smartWallet, to: Address) => {
       to: NFT_CONTRACT_ADDRESS,
       data: data,
     };
+    console.log('Transaction data', tx);
 
     // Send the transaction and get the transaction hash
     const userOpResponse = await smartWallet.sendTransaction(tx, {
@@ -71,10 +72,11 @@ const aaSendContract = async (smartWallet, to: Address) => {
     const { transactionHash } = await userOpResponse.waitForTxHash();
     console.log('Transaction Hash', transactionHash);
     const userOpReceipt = await userOpResponse.wait();
-    if (userOpReceipt.success == 'true') {
-      console.log('UserOp receipt', userOpReceipt);
-      console.log('Transaction receipt', userOpReceipt.receipt);
-    }
+    // if (userOpReceipt.success == 'true') {
+    //   console.log('UserOp receipt', JSON.stringify(userOpReceipt));
+    //   console.log('Transaction receipt', JSON.stringify(userOpReceipt.receipt));
+    // }
+    console.log('Transaction receipt success:', userOpReceipt.success);
   } catch (e) {
     console.error('aaSendContract:', e.message);
   }
