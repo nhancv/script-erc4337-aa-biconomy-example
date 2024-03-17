@@ -3,12 +3,12 @@ import { JSONFile, Low } from '@commonify/lowdb';
 
 import { createWalletClient, encodeFunctionData, Address, Hex, http } from 'viem';
 import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
-import { sepolia } from 'viem/chains';
+import { baseSepolia } from 'viem/chains';
 import { createSmartAccountClient, PaymasterMode } from '@biconomy/account';
 
 import nftContractAbi from './abis/NFTContract.json';
 
-const chain = sepolia;
+const chain = baseSepolia;
 const biconomyPaymasterApiKey = process.env.BICONOMY_PAYMASTER_API_KEY as string;
 const bundlerUrl = process.env.BICONOMY_BUNDLER_URL as string;
 
@@ -85,7 +85,7 @@ const aaSendContract = async (smartWallet, to: Address) => {
 const processScript = async () => {
   const { signer, smartWallet } = await initUser();
   await aaSendContract(smartWallet, signer.account.address);
-  // Demo: https://sepolia.etherscan.io/tx/0xfad689913049c24fa1ef7e4759db007f3978f43f8efcbecd95cbe65769e3edd2
+  // Demo: https://sepolia.basescan.org/tx/0xa447a11c2283d085b659735a14e81af93e5b31a614de5b7acbaed2dc84e33acd
 };
 
 processScript()
