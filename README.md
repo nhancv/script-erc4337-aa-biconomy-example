@@ -2,6 +2,16 @@
 
 https://docs.biconomy.io/tutorials/sendGasless
 
+## Config Biconomy
+
+- Create a new account on Biconomy: https://dashboard.biconomy.io
+- Create new Paymaster
+- Setup Gas-Tank -> Deposit Funds (ETH)
+- Setup Rules:
+  - Turn `OFF` **Sponsor Wallet Deployments Only**
+  - Whitelist all Contracts to be used -> Enable used methods only
+  - Config Spending limits
+
 ## Install dep
 
 ```
