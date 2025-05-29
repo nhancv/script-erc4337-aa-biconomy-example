@@ -33,10 +33,10 @@
   "author": "Nhan Cao <me@nhancv.com> (https://nhancv.github.io)",
   "license": "MIT",
   "dependencies": {
-    "viem": "^1.21.4",
     "@biconomy/account": "^4.0.2",
     "@commonify/lowdb": "^3.0.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "viem": "2.7.19"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
